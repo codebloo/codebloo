@@ -1,0 +1,460 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "_reset-src.scss";
+@import "bourbon/bourbon";
+@import "susy";
+$susy: (
+   columns: 12,  // The number of columns in your grid
+   gutters: 1/4, // The size of a gutter in relation to a single column
+	container: 90%,
+	global-box-sizing: border-box
+	);
+	
+
+// Breakpoints
+$mobile-landscape: 30rem; // 480px
+$tablet: 40rem; // 640px
+$tablet-wide: 48rem; // 768px
+$desktop: 64rem; // 1024px
+$widescreen: 71.25rem; // 1140px	
+     
+@include border-box-sizing;
+
+/* Colours
+***********************/
+
+$white: #ffffff;
+$lime:#a1a3a6;
+$coal:#232323;
+$truck:#545658;
+$bloo: #047dba;
+$fling:#f2f2f2;
+
+
+$deactivated:#4e5354;
+
+/* Mixins
+***********************/
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin scalepic {
+	 display:block;
+	 height:auto;
+	 max-width:100%;}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;}
+
+/* #Site Styles
+================================================== */
+
+body{
+	background-color:$coal;
+	color: $truck;
+	font: 13px/21px "Open Sans", Helvetica, Arial, sans-serif;}
+		
+a{
+	color:$bloo;
+	text-decoration:none;}
+	
+h1, h2, h3{font-weight:300;}	
+
+h1 {
+    font-size: 26px;
+    padding: 0 20px 20px;
+	 text-shadow: 1px 1px 2px #047dba;}
+
+
+h2{
+	font-size:36px;
+	line-height: 38px;
+	margin-bottom:25px;}
+
+h3{
+font-size:21px;
+line-height:26px;
+margin-bottom:20px;
+text-align:center;}
+
+#header-wrap,
+#content-wrap,
+header,
+footer{
+clear:both;
+position:relative;}
+
+button:focus {outline:0;}
+
+main{background-color:$white;}
+main section{padding: 40px 0;}
+main p{padding-bottom:20px;}
+
+/* #Header
+================================================== */
+#header-wrap{display:none;}
+	
+header{@include container;}
+nav{display:none;}
+#logo{
+	@include span(4);
+	@include push(4);}	
+
+/* #Footer
+================================================== */
+footer {
+    clear: both;
+    color: $lime;
+    font-size: 11px;
+    padding-bottom: 20px;
+    padding-top: 30px;
+	 @include container;}
+
+footer a{color:$lime;}
+	 
+.copyright{
+	text-align:center;
+	@include span(12);} 
+footer .menu{@include span(12);}
+
+footer .menu {
+    margin: 0;
+    text-align: center;}
+	 
+footer .menu li{
+   display: inline-block;
+   margin-left: 10px;}
+
+/* #Home
+================================================== */
+
+
+.home main section h2{
+	font-weight:300;
+	text-align:center;}
+
+#tagline-wrap{
+	background-image:url(../images/footer_lodyas.png);
+	background-repeat:repeat;}
+	
+.home #tagline-wrap {padding: 20px 0 30px;}
+ .home #tagline{
+ 	background: rgba(0,0,0,0.6); 
+	  margin: 0 10px;
+    padding: 20px 0 10px;}	
+	
+	
+#tagline { 
+	color: #efefef;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 22px;
+	 padding:40px 0 50px;
+	 text-align:center;}
+
+	 #tagline h1{
+		 color:#fff;
+	 	text-align:center;}
+		#tagline hr{
+			background: #047dba;
+			border: none;
+			clear:both;
+			height: 1px;
+		   margin: 21px auto 0;
+			text-align:center;
+		   width: 20px;}
+	#tagline ul{text-align:center;}		
+	#tagline ul li{
+		display:inline-block;
+		margin:0 20px;}
+	#tagline ul li a{
+		background-color:#047dba;
+		border:none;
+		color:#fff;
+		font-size:18px;
+		padding: 20px 30px;
+		text-shadow:none;
+		text-transform:uppercase;}	
+
+.lightgallery{
+	@include container;
+	@include clearfix;}
+
+.lightgallery li{
+	margin-bottom:20px;
+	@include span(12);}
+
+.lightgallery li a{
+	display:block;
+	padding: 0 10px;}
+.lightgallery li img{
+	margin:0 auto;
+	@include scalepic;}
+
+.contact,
+.services{@include container;}
+.websites,
+.logos{background-color: $fling;}
+
+
+.single_service{
+	margin-bottom:20px;;
+	@include span(12);}	
+.single_service h3{line-height: 30px;}	
+
+.contact article{@include span(12);}
+
+/* #Other pages
+================================================== */
+.page_content {@include container;}
+.page_content article{@include span(12);}
+
+
+/* #Buttons
+================================================== */
+
+	.button,
+	button,
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"] {
+		background: #eee; /* Old browsers */
+		background: #eee -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(0,0,0,.2) 100%); /* FF3.6+ */
+		background: #eee -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.2)), color-stop(100%,rgba(0,0,0,.2))); /* Chrome,Safari4+ */
+		background: #eee -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Chrome10+,Safari5.1+ */
+		background: #eee -o-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Opera11.10+ */
+		background: #eee -ms-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* IE10+ */
+		background: #eee linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* W3C */
+	  background-color:#047dba;
+	  -moz-border-radius: 3px;
+	  -webkit-border-radius: 3px;
+	  border-radius: 3px;
+	  border:none;
+	  color: #fff;
+	  cursor: pointer;
+	  display: inline-block;
+	  font-size:18px;
+	  font-weight: bold;
+	  line-height: normal;
+	  margin-bottom: 20px;
+	  padding: 20px 40px;
+	  text-decoration: none;
+	  text-transform:uppercase;}
+
+	.button:hover,
+	button:hover,
+	input[type="submit"]:hover,
+	input[type="reset"]:hover,
+	input[type="button"]:hover {
+		color: #047dba;
+	background-color: #ddd; /* Old browsers */	}
+
+	.button:active,
+	button:active,
+	input[type="submit"]:active,
+	input[type="reset"]:active,
+	input[type="button"]:active {background: #ccc; /* Old browsers */}
+
+	.button.full-width,
+	button.full-width,
+	input[type="submit"].full-width,
+	input[type="reset"].full-width,
+	input[type="button"].full-width {
+		width: 100%;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		text-align: center; }
+
+	/* Fix for odd Mozilla border & padding issues */
+	button::-moz-focus-inner,
+	input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+	}
+
+
+/* #Forms
+================================================== */
+
+	form {margin-bottom: 20px; }
+	fieldset {margin-bottom: 20px; }
+	.gform_wrapper form .gform_body ul li span input,
+	#content-wrap .gform_wrapper form .gform_body input[type="email"],
+	#content-wrap .gform_wrapper input[type="email"], 
+	#content-wrap .gform_wrapper input[type="number"], 
+	#content-wrap .gform_wrapper input[type="password"], 
+	#content-wrap .gform_wrapper input[type="tel"], 
+	#content-wrap .gform_wrapper input[type="text"], 
+	#content-wrap .gform_wrapper input[type="url"],
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="search"],
+	textarea,
+	select {
+		background: #fff none repeat scroll 0 0;
+		border: 1px solid #ccc;
+		-moz-border-radius: 2px;
+		-webkit-border-radius: 2px;
+		border-radius: 2px;
+		color: #777;
+		display: block;
+		font: 13px "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+		margin: 0 0 20px;
+		max-width: 100%;
+		outline: medium none;
+		padding: 10px 4px;}
+		.gform_wrapper form .gform_body ul li span input{margin-bottom:0;}
+		
+		form .half{
+			clear:none!important;
+			float:left;
+			display: inline-block;
+			vertical-align: top;
+			width: 48.5%;}
+		form .odd{margin-right: 1.3%;}
+		form .ginput_complex input{margin-bottom:0!important;}
+		
+		
+	select {padding: 0; }
+	input[type="text"]:focus,
+	input[type="password"]:focus,
+	input[type="email"]:focus,
+	textarea:focus {
+		border: 1px solid $truck;
+ 		color: $coal;
+ 		-moz-box-shadow: 0 0 3px rgba(0,0,0,.2);
+		-webkit-box-shadow: 0 0 3px rgba(0,0,0,.2);
+		box-shadow:  0 0 3px rgba(0,0,0,.2); }
+	textarea {min-height: 60px; }
+	label{
+		display: block;
+		font-weight: bold;
+		font-size: 13px;  }
+	select {width: 220px; }
+	input[type="checkbox"] {display: inline; }
+	label span{
+		font-weight: normal;
+		font-size: 13px;
+		color: #444; }
+
+
+
+
+/* #MEDIA QUERIES 
+================================================== */
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (min-width: 767px) {
+	
+	h1 {
+	    font-size: 46px;
+	    line-height: 50px;
+	    padding-bottom: 30px;}
+	
+	/* #Header
+	================================================== */	
+	#header-wrap{
+	background-color:$white;
+	border-bottom: 2px solid $bloo;
+	display:block;
+   height: 90px;
+   position: fixed;
+   width: 100%;
+   z-index: 111;}
+	
+	#logo{
+	@include span(4);
+	@include push(0);}	
+	nav{
+		display:block;
+		@include span(8 last);}	
+	nav ul {
+	    float: right;
+	    line-height: 14px;
+	    list-style: outside none none;
+	    margin: 0;
+	    padding: 0;}
+
+	nav ul li {
+	    float: left;
+	    margin-bottom: 0;
+	    padding-top: 40px;
+	    position: relative;
+	    z-index: 40;}
+
+	nav ul a, 
+	nav ul a:visited {
+	    color: $coal;
+	    display: inline;
+	    font-size: 11px;
+	    font-weight: 600;
+	    height: 14px;
+	    letter-spacing: 0.03em;
+	    line-height: 14px;
+	    padding: 0 10px;
+	    position: relative;
+	    text-transform: uppercase;}
+	
+	
+	/* #Footer
+	================================================== */
+	
+	footer {
+	    padding-bottom: 70px;
+	    padding-top: 40px;}
+	.copyright{
+		text-align:left;
+		@include span(8);} 
+	footer .menu{@include span(4 last);}
+
+	footer .menu {
+	    float: right;
+	    text-align: right;}
+	 
+	
+	
+	/* #Home
+	================================================== */
+		
+		.lightgallery li{
+			float:left;
+			margin:0 0 20px;
+			width: calc(100% / 4);}
+		
+		.single_service{
+			float:left;
+			margin:0 10px 20px;
+			width: calc(100% / 3 - 20px);}
+		
+		.contact article{
+			@include span(6);
+			@include push(3);}
+			
+		#tagline-wrap{
+		 padding-top: 92px;
+		@include clearfix;}	
+		.home #tagline-wrap{padding: 92px 0 60px 0;}	
+		.home #tagline{
+		   @include border-radius(2px);
+			margin-top: 60px;
+		   	 padding: 60px 0 40px;
+			  @include span(8);
+			  @include push (2);}	
+			  
+  	
+			  
+    
+	
+	}
