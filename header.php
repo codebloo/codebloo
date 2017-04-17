@@ -57,7 +57,7 @@
 	<?php if(!is_front_page() && !is_archive('work') && !is_home() && !is_single() && !is_singular('work')):?>	
 	<div id="tagline-wrap">
 		<div class="container">
-			<div id="tagline" class="columns sixteen">
+			<div id="tagline">
 				<h1><?php the_title();?></h1>
 				<p>Los Angeles Front End Developer<br/>
 					PSD to Wordpress, HTML, CSS &amp; jQuery.</p>
@@ -81,7 +81,7 @@
 <?php else: ?>
 	<div id="tagline-wrap">
 		<div class="container">
-			<div id="tagline" class="columns sixteen">
+			<div id="tagline">
 				<h1><?php the_title();?></h1>
 				<p>Los Angeles Front End Developer<br/>
 					PSD to Wordpress, HTML, CSS &amp; jQuery.</p>

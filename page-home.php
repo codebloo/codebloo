@@ -5,7 +5,7 @@ get_header(); ?>
 
 
 <section class="services">
-	<h2>Hello! I'm Verona and I make new internet.</h2>
+	<h2>Hello! I'm Verona and <span>I make new internet</span>.</h2>
 	<?php if( have_rows('service') ): ?>
 		<?php while( have_rows('service') ): the_row(); ?>
 	      <div class="single_service">

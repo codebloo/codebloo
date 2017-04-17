@@ -104,9 +104,6 @@ main p {
 
 /* #Header
 ================================================== */
-#header-wrap {
-  display: none; }
-
 header {
   max-width: 90%;
   margin-left: auto;
@@ -265,14 +262,22 @@ footer .menu li {
 .logos {
   background-color: #f2f2f2; }
 
+.services h2 span {
+  color: #047dba; }
+
 .single_service {
+  background-color: #f2f2f2;
+  height: 250px;
   margin-bottom: 20px;
+  padding: 10px 20px 0;
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0; }
 
 .single_service h3 {
+  font-weight: 600;
+  height: 55px;
   line-height: 30px; }
 
 .contact article {
@@ -297,6 +302,10 @@ footer .menu li {
   float: left;
   margin-left: 0;
   margin-right: 0; }
+
+.ltw_tes_client_name {
+  font-weight: 700;
+  padding-bottom: 0; }
 
 /* #Buttons
 ================================================== */
@@ -467,9 +476,11 @@ label span {
     display: block;
     height: 90px;
     position: fixed;
+    top: 0;
     width: 100%;
     z-index: 111; }
   #logo {
+    padding-top: 10px;
     width: 32.2033898305%;
     float: left;
     margin-right: 1.6949152542%;

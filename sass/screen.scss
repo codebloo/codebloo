@@ -103,8 +103,6 @@ main p{padding-bottom:20px;}
 
 /* #Header
 ================================================== */
-#header-wrap{display:none;}
-	
 header{@include container;}
 nav{display:none;}
 #logo{
@@ -207,11 +205,17 @@ footer .menu li{
 .websites,
 .logos{background-color: $fling;}
 
-
+.services h2 span{color:$bloo;}
 .single_service{
-	margin-bottom:20px;;
+	background-color:$fling;
+	 height: 250px;
+	margin-bottom:20px;
+	padding:10px 20px 0;
 	@include span(12);}	
-.single_service h3{line-height: 30px;}	
+.single_service h3{
+	font-weight:600;
+	height:55px;
+	line-height: 30px;}	
 
 .contact article{@include span(12);}
 
@@ -219,6 +223,10 @@ footer .menu li{
 ================================================== */
 .page_content {@include container;}
 .page_content article{@include span(12);}
+
+.ltw_tes_client_name{
+	font-weight:700;
+	padding-bottom:0;}
 
 
 /* #Buttons
@@ -371,10 +379,12 @@ footer .menu li{
 	display:block;
    height: 90px;
    position: fixed;
+	top: 0; 
    width: 100%;
    z-index: 111;}
 	
 	#logo{
+	padding-top: 10px;
 	@include span(4);
 	@include push(0);}	
 	nav{
