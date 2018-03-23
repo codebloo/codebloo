@@ -1,7 +1,9 @@
 <?php get_header(); ?>
 
 <section class="page_content">
-	<article><?php the_content(); ?></article>
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>	
+		<article><?php the_content(); ?></article>
+	<?php endwhile; endif; ?>
 </section>
 
 <?php get_footer();?>
