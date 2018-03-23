@@ -5,3 +5,6 @@
 <?php wp_nav_menu(array('theme_location' => 'footer-menu', 'menu-class' => 'footer_menu nav', 'link_before' => '<span>', 'link_after' => '</span>', 'container_class' => 'footer_nav')); ?>
 	
 </footer>
+<?php wp_footer(); ?>
+</body>
+</html>
